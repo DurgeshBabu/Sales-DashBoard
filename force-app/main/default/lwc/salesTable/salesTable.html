@@ -1,0 +1,32 @@
+<template>
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="sdls-text-title_caps" scope="col" onclick={sortByProductName}>
+                    <div class="slds-truncate" title="Product Name">Product Name</div>
+                </th>
+                <th class="slds-text-title_caps" scope="col" onclick={sortByQuantity}>
+                    <div class="slds-truncate" title="Quantity">Quantity</div>
+                </th>
+                <th class="slds-text-title_caps" scope="col" onclick={sortByAmount}>
+                    <div class="slds-truncate" title="Amount">Amount</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={products} for:item="product">
+                <tr key={product.Id} class="slds-hint-parent">
+                    <td data-label="Product Name">
+                        <div class="slds-truncate" title={product.Name}>{product.Name}</div>
+                    </td>
+                    <td data-label="Quantity">
+                        <div class="slds-truncate" title={product.Quantity}>{product.Quantity}</div>
+                    </td>
+                    <td data-label="Amount">
+                        <div class="slds-truncate" title={product.Amount}>{product.Amount}</div>
+                    </td>
+                </tr>
+            </template>
+        </tbody>
+    </table>
+</template>
